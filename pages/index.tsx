@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "./index.module.css";
 
 type Props = {
-  initialImagerUrl: string;
+  initialImageUrl: string;
 };
 
 const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
