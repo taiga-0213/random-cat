@@ -41,7 +41,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const image = await fetchImage();
   return {
     props: {
-      initialImagerUrl: image.url,
+      initialImageUrl: image.url,
     },
   };
 };
