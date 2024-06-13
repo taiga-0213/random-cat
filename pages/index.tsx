@@ -11,7 +11,19 @@ const IndexPage: NextPage = () => {
     });
   }, []);
 
-  return <div>{loading || <img src={imageUrl} />}</div>;
+  const handleClick = async () => {
+    setLoading(true);
+    const newImage = await fetchImage();
+    setImageUrl(newImage.url);
+    setLoading(false);
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>他のにゃんこも見る</button>
+      {loading || <img src={imageUrl} />}
+    </div>
+  );
 };
 
 export default IndexPage;
@@ -26,5 +38,3 @@ const fetchImage = async (): Promise<Image> => {
   console.log(images);
   return images[0];
 };
-
-//test
